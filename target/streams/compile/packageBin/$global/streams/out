@@ -1,0 +1,51 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/flightdataanalysis_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Passenger$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/Passenger$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Passenger.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/Passenger.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator21$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator21$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryRun$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/CountryRun$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FrequentFlyer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FrequentFlyer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryRun.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/CountryRun.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightStatistics$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightStatistics$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PassengerPair.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/PassengerPair.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator9$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FrequentFlyer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FrequentFlyer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator25$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator25$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightStatistics.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightStatistics.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PassengerPair$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/PassengerPair$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Flight.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/Flight.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	log4j.properties[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/log4j.properties[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Flight$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/Flight$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator13$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator13$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlightDataAnalysisApp$$typecreator17$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/target/scala-2.12/classes/FlightDataAnalysisApp$$typecreator17$1.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

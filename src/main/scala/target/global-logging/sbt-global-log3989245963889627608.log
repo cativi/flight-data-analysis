@@ -1,0 +1,116 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(d3a11135-2d06-4520-b9fe-c06be385a53c), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/target/scala-2.12/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mNon-compiled module 'compiler-bridge_2.12' for Scala 2.12.19. Compiling...[0m
+[0m[[0m[0minfo[0m] [0m[0m  Compilation completed in 5.395s.[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightDataAnalysisApp.scala:1:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.SparkSession[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightDataAnalysisApp.scala:8:17: not found: value SparkSession[0m
+[0m[[0m[31merror[0m] [0m[0m    val spark = SparkSession.builder()[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightDataAnalysisApp.scala:17:131: not found: type Flight[0m
+[0m[[0m[31merror[0m] [0m[0m      val flightsDF = spark.read.csv("/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightData.csv").as[Flight][0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightDataAnalysisApp.scala:18:134: not found: type Passenger[0m
+[0m[[0m[31merror[0m] [0m[0m      val passengersDF = spark.read.csv("/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/passengers.csv").as[Passenger][0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:2:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.functions._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:1:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.{Dataset, Encoder, SparkSession}[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:16:100: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateFlightsPerMonth(flightDS: Dataset[Flight])(implicit encoder: Encoder[FlightCount]): Dataset[FlightCount] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:16:42: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateFlightsPerMonth(flightDS: Dataset[Flight])(implicit encoder: Encoder[FlightCount]): Dataset[FlightCount] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:16:77: not found: type Encoder[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateFlightsPerMonth(flightDS: Dataset[Flight])(implicit encoder: Encoder[FlightCount]): Dataset[FlightCount] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:132:25: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def writeToCSV[T](ds: Dataset[T], path: String): Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:33:142: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findFrequentFlyers(flightDS: Dataset[Flight], passengersDS: Dataset[Passenger], limit: Int)(implicit encoder: Encoder[FrequentFlyer]): Dataset[FrequentFlyer] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:33:36: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findFrequentFlyers(flightDS: Dataset[Flight], passengersDS: Dataset[Passenger], limit: Int)(implicit encoder: Encoder[FrequentFlyer]): Dataset[FrequentFlyer] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:33:67: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findFrequentFlyers(flightDS: Dataset[Flight], passengersDS: Dataset[Passenger], limit: Int)(implicit encoder: Encoder[FrequentFlyer]): Dataset[FrequentFlyer] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:33:117: not found: type Encoder[0m
+[0m[[0m[31merror[0m] [0m[0m  def findFrequentFlyers(flightDS: Dataset[Flight], passengersDS: Dataset[Passenger], limit: Int)(implicit encoder: Encoder[FrequentFlyer]): Dataset[FrequentFlyer] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:55:94: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findLongestNonUKRun(flightDS: Dataset[Flight])(implicit encoder: Encoder[CountryRun]): Dataset[CountryRun] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:55:37: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findLongestNonUKRun(flightDS: Dataset[Flight])(implicit encoder: Encoder[CountryRun]): Dataset[CountryRun] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:55:72: not found: type Encoder[0m
+[0m[[0m[31merror[0m] [0m[0m  def findLongestNonUKRun(flightDS: Dataset[Flight])(implicit encoder: Encoder[CountryRun]): Dataset[CountryRun] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:86:130: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findPassengersFlownTogether(flightDS: Dataset[Flight], minFlightsTogether: Int)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:86:45: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def findPassengersFlownTogether(flightDS: Dataset[Flight], minFlightsTogether: Int)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:86:105: not found: type Encoder[0m
+[0m[[0m[31merror[0m] [0m[0m  def findPassengersFlownTogether(flightDS: Dataset[Flight], minFlightsTogether: Int)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:110:133: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def flownTogether(flightDS: Dataset[Flight], atLeastNTimes: Int, from: Date, to: Date)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:110:31: not found: type Dataset[0m
+[0m[[0m[31merror[0m] [0m[0m  def flownTogether(flightDS: Dataset[Flight], atLeastNTimes: Int, from: Date, to: Date)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:110:108: not found: type Encoder[0m
+[0m[[0m[31merror[0m] [0m[0m  def flownTogether(flightDS: Dataset[Flight], atLeastNTimes: Int, from: Date, to: Date)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:3:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.expressions.Window[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:5:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.storage.StorageLevel[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:21:11: not found: type FlightCount[0m
+[0m[[0m[31merror[0m] [0m[0m      .as[FlightCount][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:44:11: not found: type FrequentFlyer[0m
+[0m[[0m[31merror[0m] [0m[0m      .as[FrequentFlyer][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:45:16: not found: value col[0m
+[0m[[0m[31merror[0m] [0m[0m      .orderBy(col("numberOfFlights").desc)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:63:22: not found: value Window[0m
+[0m[[0m[31merror[0m] [0m[0m    val windowSpec = Window.partitionBy("passengerId").orderBy("date")[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:72:11: not found: type CountryRun[0m
+[0m[[0m[31merror[0m] [0m[0m      .as[CountryRun][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:73:16: not found: value col[0m
+[0m[[0m[31merror[0m] [0m[0m      .orderBy(col("longestRun").desc)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:97:11: not found: type PassengerPair[0m
+[0m[[0m[31merror[0m] [0m[0m      .as[PassengerPair][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:98:16: not found: value col[0m
+[0m[[0m[31merror[0m] [0m[0m      .orderBy(col("flightsTogether").desc)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:121:11: not found: type PassengerPair[0m
+[0m[[0m[31merror[0m] [0m[0m      .as[PassengerPair][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/FlightStatistics.scala:122:16: not found: value col[0m
+[0m[[0m[31merror[0m] [0m[0m      .orderBy(col("flightsTogether").desc)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m35 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 6 s, completed 3 oct 2024, 18:23:45[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

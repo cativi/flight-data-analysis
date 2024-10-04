@@ -1,0 +1,60 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 0 products, 0 sources, 0 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/FlightStatistics.scala, ${BASE}/FlightDataAnalysisApp.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(${BASE}/FlightDataAnalysisApp.scala, ${BASE}/FlightStatistics.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mFull compilation, no sources in previous analysis.[0m
+[0m[[0m[0mdebug[0m] [0m[0mall 2 sources are invalidated[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all sources: number of invalidated sources > 50.0 percent of all sources[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/target/scala-2.12/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.10.2:compile for Scala 2.12.19[0m
+[0m[[0m[0minfo[0m] [0m[0mNon-compiled module 'compiler-bridge_2.12' for Scala 2.12.19. Compiling...[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating plain compiler interface for 2.12.19.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > Arguments: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	-d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ee005c9a[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-nowarn[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/classes:/Users/carlostv2021/.sbt/boot/scala-2.12.19/lib/scala-library.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/carlostv2021/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.10.2/compiler-interface-1.10.2.jar:/Users/carlostv2021/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.10.1/util-interface-1.10.1.jar:/Users/carlostv2021/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.12/1.10.2/compiler-bridge_2.12-1.10.2-sources.jar:/Users/carlostv2021/.sbt/boot/scala-2.12.19/lib/scala-compiler.jar:/Users/carlostv2021/.sbt/boot/scala-2.12.19/lib/scala-xml_2.12-2.2.0.jar:/Users/carlostv2021/.sbt/boot/scala-2.12.19/lib/scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/scala/ZincCompat.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/scala/reflect/ReflectAccess.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/API.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/AbstractZincFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/Analyzer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/CallbackGlobal.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/ClassName.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/Compat.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/CompilerBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/ConsoleBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/DelegatingReporter.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/Dependency.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/ExtractAPI.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/ExtractUsedNames.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/GlobalHelpers.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/InteractiveConsoleBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/InteractiveConsoleFactoryBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/InteractiveConsoleHelper.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/InteractiveConsoleResponse.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/JarUtils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/JavaUtils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/LocalToNonLocalClass.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/LocateClassFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/Log.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/Message.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/PlainNioFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/ScaladocBridge.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/var/folders/r0/mrkdn02x5tg0cy06vpmq8wz40000gn/T/sbt_ce702e5d/xsbt/trace.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m      [0m
+[0m[[0m[0minfo[0m] [0m[0m  Compilation completed in 26.018s.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler e67279d for Scala compiler version 2.12.19[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/classes:/Users/carlostv2021/.sbt/boot/scala-2.12.19/lib/scala-library.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/src/main/scala/target/scala-2.12/classes[0m
+[0m[[0m[0mdebug[0m] [0m[0mCompilation failed (CompilerInterface)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m

@@ -1,0 +1,1 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: List(-Xms512M, -Xmx2048M, -XX:MaxPermSize=2048M, -XX:+CMSClassUnloadingEnabled, -Dspark.serializer=org.apache.spark.serializer.KryoSerializer, -Dlog4j.configuration=log4j.properties)[0m

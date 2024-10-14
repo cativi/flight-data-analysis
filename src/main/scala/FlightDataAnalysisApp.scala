@@ -4,14 +4,14 @@ import java.sql.Date
 import FlightStatistics._
 
 object FlightDataAnalysisApp {
-def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     // Set the log level
     Logger.getLogger("org").setLevel(Level.WARN)
     Logger.getLogger("akka").setLevel(Level.WARN)
 
     // Create SparkSession
     val spark = SparkSession.builder()
-      .appName("FlightDataAnalysis")
+      .appName("FlightDataAnalysisRunner")
       .master("local[*]")
       .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
       .getOrCreate()
@@ -19,8 +19,8 @@ def main(args: Array[String]): Unit = {
     import spark.implicits._
 
     try {
-      val flightDataPath = "/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightData.csv"
-      val passengerDataPath = "/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/passengers.csv"
+      val flightDataPath = "/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/data/flightData.csv"
+      val passengerDataPath = "/Users/carlostv2021/Desktop/Development/Quantexa/Flight Data Assignment/flightDataAnalysis/data/passengers.csv"
 
       println(s"Reading flight data from: $flightDataPath")
       val flightsDF = spark.read
@@ -61,13 +61,14 @@ def main(args: Array[String]): Unit = {
         }
       }
 
+      // Update the date range to be from January 2017
+      val from = Date.valueOf("2017-01-01")
+      val to = Date.valueOf("2017-01-31")
+
       runAnalysis("Flights per month", calculateFlightsPerMonth(flightDS), "output/q1_flights_per_month.csv")
       runAnalysis("Frequent flyers", findFrequentFlyers(flightDS, passengerDS, 100), "output/q2_frequent_flyers.csv")
       runAnalysis("Longest non-UK runs", findLongestNonUKRun(flightDS), "output/q3_longest_non_uk_runs.csv")
       runAnalysis("Passengers flown together", findPassengersFlownTogether(flightDS, 3), "output/q4_passengers_flown_together.csv")
-
-      val from = Date.valueOf("2023-01-01")
-      val to = Date.valueOf("2023-12-31")
       runAnalysis("Passengers flown together in date range", flownTogether(flightDS, 3, from, to), "output/q5_passengers_flown_together_in_range.csv")
 
       println("All analyses completed.")

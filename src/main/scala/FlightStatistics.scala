@@ -5,24 +5,21 @@ import java.sql.Date
 import org.apache.spark.storage.StorageLevel
 
 case class Flight(passengerId: String, flightId: String, from: String, to: String, date: String)
-
 case class Passenger(passengerId: String, firstName: String, lastName: String)
-
 case class FlightCount(month: Int, numberOfFlights: Long)
-
 case class FrequentFlyer(passengerId: String, numberOfFlights: Long, firstName: String, lastName: String)
-
 case class CountryRun(passengerId: String, longestRun: Long)
-
 case class PassengerPair(passenger1: String, passenger2: String, flightsTogether: Long)
 
 object FlightStatistics {
 
   def calculateFlightsPerMonth(flightDS: Dataset[Flight])(implicit encoder: Encoder[FlightCount]): Dataset[FlightCount] = {
+    import flightDS.sparkSession.implicits._
+
     flightDS
-      .filter(col("date").isNotNull)
-      .groupBy(month(to_date(col("date"), "yyyy-MM-dd")).as("month"))
-      .agg(count("*").as("numberOfFlights"))
+      .filter($"date".isNotNull)
+      .groupBy(month($"date").as("month"))
+      .agg(countDistinct($"flightId").as("numberOfFlights"))
       .as[FlightCount]
       .orderBy("month")
   }
@@ -44,62 +41,89 @@ object FlightStatistics {
   }
 
   def findLongestNonUKRun(flightDS: Dataset[Flight])(implicit encoder: Encoder[CountryRun]): Dataset[CountryRun] = {
-    val countryRunsDF = flightDS
-      .select(col("passengerId"), to_date(col("date"), "yyyy-MM-dd").as("date"), col("from").as("country"))
-      .union(flightDS.select(col("passengerId"), to_date(col("date"), "yyyy-MM-dd").as("date"), col("to").as("country")))
-      .distinct()
-      .orderBy("passengerId", "date")
-      .persist(StorageLevel.MEMORY_AND_DISK)
+    import flightDS.sparkSession.implicits._
+
+    val flightsWithUKIndicator = flightDS
+      .withColumn("isUK", lower(col("from")).contains("uk") || lower(col("to")).contains("uk"))
+
+    val flightsWithUKFlag = flightsWithUKIndicator
+      .withColumn("isUKSegment", when(col("isUK"), lit(1)).otherwise(lit(0)))
 
     val windowSpec = Window.partitionBy("passengerId").orderBy("date")
+    val flightsWithSegmentId = flightsWithUKFlag
+      .withColumn("nonUKSegmentId", sum("isUKSegment").over(windowSpec))
 
-    val result = countryRunsDF
-      .withColumn("uk_visit", when(lower(col("country")) === "uk", 1).otherwise(0))
-      .withColumn("run_id", sum("uk_visit").over(windowSpec))
-      .groupBy("passengerId", "run_id")
-      .agg(countDistinct("country").as("countries_visited"))
+    val nonUKFlights = flightsWithSegmentId.filter(!col("isUK"))
+
+    val segmentCountriesVisited = nonUKFlights
+      .groupBy("passengerId", "nonUKSegmentId")
+      .agg(countDistinct("to").as("countriesVisited"))
+
+    val longestNonUKRun = segmentCountriesVisited
       .groupBy("passengerId")
-      .agg(max("countries_visited").as("longestRun"))
+      .agg(max("countriesVisited").as("longestRun"))
       .as[CountryRun]
       .orderBy(col("longestRun").desc)
 
-    countryRunsDF.unpersist()
-    result
+    longestNonUKRun
   }
 
   def findPassengersFlownTogether(flightDS: Dataset[Flight], minFlightsTogether: Int)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {
+    import flightDS.sparkSession.implicits._
+
     flightDS
-      .filter(col("date").isNotNull)
       .as("f1")
-      .join(flightDS.filter(col("date").isNotNull).as("f2"),
-        col("f1.date") === col("f2.date") &&
+      .join(flightDS.as("f2"),
         col("f1.flightId") === col("f2.flightId") &&
-        col("f1.passengerId") < col("f2.passengerId"))
+        col("f1.passengerId") < col("f2.passengerId")
+      )
       .groupBy(col("f1.passengerId").as("passenger1"), col("f2.passengerId").as("passenger2"))
       .agg(count("*").as("flightsTogether"))
-      .filter(col("flightsTogether") >= minFlightsTogether)
+      .filter(col("flightsTogether") > minFlightsTogether)
+      .distinct()
       .as[PassengerPair]
       .orderBy(col("flightsTogether").desc)
   }
 
   def flownTogether(flightDS: Dataset[Flight], atLeastNTimes: Int, from: Date, to: Date)(implicit encoder: Encoder[PassengerPair]): Dataset[PassengerPair] = {
-    val filteredFlights = flightDS.filter(to_date(col("date"), "yyyy-MM-dd").between(from, to))
+    import flightDS.sparkSession.implicits._
 
-    filteredFlights.as("f1")
-      .join(filteredFlights.as("f2"),
-        col("f1.date") === col("f2.date") &&
+    // Ensure the date format matches the timestamp format in the dataset
+    val filteredFlights = flightDS
+      .withColumn("flightDate", to_timestamp(col("date"), "yyyy-MM-dd HH:mm:ss"))
+      .filter(col("flightDate").geq(from) && col("flightDate").leq(to))
+
+    // Logging the count to verify if records are filtered correctly
+    val filteredCount = filteredFlights.count()
+    println(s"Filtered flights within range ($from to $to): $filteredCount")
+
+    if (filteredCount == 0) {
+      println("No flights found in the given date range.")
+      return flightDS.sparkSession.emptyDataset[PassengerPair]
+    }
+
+    // Cache the dataset to improve performance for repeated operations
+    val cachedFlights = filteredFlights.cache()
+
+    // Join and group to find pairs of passengers who have flown together
+    val passengerPairs = cachedFlights
+      .as("f1")
+      .join(cachedFlights.as("f2"),
         col("f1.flightId") === col("f2.flightId") &&
-        col("f1.passengerId") < col("f2.passengerId"))
+        col("f1.passengerId") < col("f2.passengerId")
+      )
       .groupBy(col("f1.passengerId").as("passenger1"), col("f2.passengerId").as("passenger2"))
       .agg(count("*").as("flightsTogether"))
       .filter(col("flightsTogether") >= atLeastNTimes)
       .as[PassengerPair]
       .orderBy(col("flightsTogether").desc)
+
+    passengerPairs
   }
 
- def writeToCSV[T](ds: Dataset[T], path: String): Unit = {
+  def writeToCSV[T](ds: Dataset[T], path: String): Unit = {
     ds.write
-      .mode("overwrite")  // This will overwrite the existing directory
+      .mode("overwrite")
       .option("header", "true")
       .csv(path)
   }

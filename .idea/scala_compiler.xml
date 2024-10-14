@@ -2,5 +2,10 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="flightDataTest" />
+    <profile name="sbt 2" modules="FlightDataAnalysis">
+      <parameters>
+        <parameter value="-Yrangepos" />
+      </parameters>
+    </profile>
   </component>
 </project>

@@ -4,7 +4,7 @@
 		module="flightdataanalysis_2.12"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20241003195507"
+		publication="20241014103057"
 	>
 		<description>
 		FlightDataAnalysis
@@ -36,5 +36,7 @@
 		<dependency org="org.apache.spark" name="spark-sql_2.12" rev="2.4.8" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.8" conf="test->default(compile)"/>
 		<dependency org="org.scalacheck" name="scalacheck_2.12" rev="1.14.1" conf="test->default(compile)"/>
+		<override org="com.fasterxml.jackson.core" module="jackson-databind" matcher="exact" rev="2.6.7.3"/>
+		<override org="com.fasterxml.jackson.module" module="jackson-module-scala_2.12" matcher="exact" rev="2.6.7.1"/>
 	</dependencies>
 </ivy-module>
